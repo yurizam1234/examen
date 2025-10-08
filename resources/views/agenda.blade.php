@@ -5,53 +5,93 @@
   <title>Agendar Cita - TECBA</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
-    body {
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
       font-family: 'Segoe UI', sans-serif;
-      background-color: #f7f7f7;
+      background-color: #ffffff; /* fondo blanco */
+      display: flex;
+      flex-direction: column;
+    }
+
+    main {
+      flex: 1; /* ocupa todo el espacio disponible */
       padding: 30px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
     }
 
     h1 {
-      color: #2a7a78;
-      margin-bottom: 30px;
+      color: #10414d;
       text-align: center;
+      margin-bottom: 30px;
+      font-weight: 700;
     }
 
     .form-container {
-      background: white;
+      background: #f8f9fa;
       padding: 30px;
       border-radius: 10px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
       max-width: 600px;
-      margin: auto;
+      width: 100%;
+      margin-bottom: 20px;
     }
 
     .btn-agendar {
       background-color: #2a7a78;
       color: white;
+      border: none;
+      font-weight: bold;
+      transition: background 0.3s, transform 0.2s;
     }
 
     .btn-agendar:hover {
       background-color: #205f5a;
+      transform: translateY(-2px);
     }
 
-    .btn-volver {
-      background-color: #ccc;
-      color: black;
-      text-decoration: none;
+    .btn-patitas {
+      background-color: #2a7a78; /* azul Patitas */
+      color: white;
       padding: 10px 20px;
-      border-radius: 5px;
-      display: inline-block;
-      margin-top: 30px;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+      transition: background 0.3s, transform 0.2s;
+    }
+    .btn-patitas:hover {
+      background-color: #00aac8;
+      transform: translateY(-2px);
     }
 
-    .btn-volver:hover {
-      background-color: #aaa;
+    footer {
+      text-align: center;
+      color: #ffffff;
+      background-color: #000;
+      padding: 1.5rem 0;
+      font-size: 0.9rem;
+      width: 100%;
     }
+
+    footer a {
+      color: #00cfff;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+    
+
   </style>
 </head>
 <body>
 
+<main>
   <h1>Agendar una Cita Médica</h1>
 
   <div class="form-container">
@@ -87,47 +127,45 @@
         <input type="text" class="form-control" id="contacto" placeholder="Ej: 77712345 o ejemplo@email.com" required>
       </div>
 
-      <button type="submit" class="btn btn-agendar">Agendar Cita</button>
+      <button type="submit" class="btn btn-agendar w-100">Agendar Cita</button>
     </form>
   </div>
 
-  <div class="text-center">
-    <a href="index.html" class="btn-volver mt-4">← Volver a Inicio</a>
-  </div>
+  <a href="http://127.0.0.1:8000/" class="btn-patitas">Volver</a>
+</main>
 
-  <script>
-    const formulario = document.getElementById("formCita");
+<footer>
+  &copy; 2025 TECBA. Todos los derechos reservados. <br>
+  📧 <a href="mailto:contacto@tecba.com">contacto@tecba.com</a> | ☎️ +591 123 456 789
+</footer>
 
-    formulario.addEventListener("submit", function (e) {
-      e.preventDefault();
+<script>
+  const formulario = document.getElementById("formCita");
 
-      const nombre = document.getElementById("nombre").value;
-      const especialidad = document.getElementById("especialidad").value;
-      const fecha = document.getElementById("fecha").value;
-      const hora = document.getElementById("hora").value;
-      const contacto = document.getElementById("contacto").value;
+  formulario.addEventListener("submit", function (e) {
+    e.preventDefault();
 
-      if (!nombre || !especialidad || !fecha || !hora || !contacto) {
-        alert("Por favor, completa todos los campos.");
-        return;
-      }
+    const nombre = document.getElementById("nombre").value;
+    const especialidad = document.getElementById("especialidad").value;
+    const fecha = document.getElementById("fecha").value;
+    const hora = document.getElementById("hora").value;
+    const contacto = document.getElementById("contacto").value;
 
-      const nuevaCita = {
-        nombre,
-        especialidad,
-        fecha,
-        hora,
-        contacto
-      };
+    if (!nombre || !especialidad || !fecha || !hora || !contacto) {
+      alert("Por favor, completa todos los campos.");
+      return;
+    }
 
-      let citas = JSON.parse(localStorage.getItem("citasTecba")) || [];
-      citas.push(nuevaCita);
-      localStorage.setItem("citasTecba", JSON.stringify(citas));
+    const nuevaCita = { nombre, especialidad, fecha, hora, contacto };
 
-      alert("✅ ¡Cita registrada correctamente!");
-      formulario.reset();
-    });
-  </script>
+    let citas = JSON.parse(localStorage.getItem("citasTecba")) || [];
+    citas.push(nuevaCita);
+    localStorage.setItem("citasTecba", JSON.stringify(citas));
+
+    alert("✅ ¡Cita registrada correctamente!");
+    formulario.reset();
+  });
+</script>
 
 </body>
 </html>
