@@ -132,11 +132,14 @@
   </div>
 
   <a href="http://127.0.0.1:8000/" class="btn-patitas">Volver</a>
+  <br> <br>
+  <a href="{{ url('/calendario') }}" class="btn-patitas">ver calendario</a>
+ 
 </main>
 
 <footer>
-  &copy; 2025 TECBA. Todos los derechos reservados. <br>
-  📧 <a href="mailto:contacto@tecba.com">contacto@tecba.com</a> | ☎️ +591 123 456 789
+  &copy; 2025 veterinaria Patitas Felices 🐾. Todos los derechos reservados. <br>
+  📧 <a href="mailto:contacto@patitasfelices.com">contacto@tecba.com</a> | ☎️ +591 123 456 789
 </footer>
 
 <script>
@@ -158,7 +161,7 @@
 
     const nuevaCita = { nombre, especialidad, fecha, hora, contacto };
 
-    let citas = JSON.parse(localStorage.getItem("citasTecba")) || [];
+    let citas = JSON.parse(localStorage.getItem("citasveterinaria")) || [];
     citas.push(nuevaCita);
     localStorage.setItem("citasTecba", JSON.stringify(citas));
 

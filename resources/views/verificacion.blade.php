@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Verificación de Citas - Patitas Felices</title>
+  <title>Emergencia de Citas - Patitas Felices</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
     /* Flex para sticky footer */
@@ -153,12 +153,16 @@
       background-color: #00aac8;
       transform: translateY(-2px);
     }
+    . text-center {
+      text-align: center;
+      height: ;
+    }
   </style>
 </head>
 <body>
 
   <main>
-    <h1>Registros de Citas Agendadas</h1>
+    <h1>Emergencias</h1>
 
     <!-- Formulario para agregar contacto -->
     <form id="formAgregar">
@@ -167,10 +171,12 @@
       <input type="date" id="fecha" required>
       <input type="time" id="hora" required>
       <input type="text" id="contacto" placeholder="Contacto" required>
-      <button type="submit" class="btn-agregar">Agregar Cita</button>
+      <button type="submit" class="btn-agregar">Agregar </button>
+
+      
     </form>
 
-    <input type="text" id="busqueda" class="form-control" placeholder="Buscar por nombre o fecha">
+    <input type="text" id="busqueda" class="form-control" placeholder="Buscar tipo de Urgencia (niveles III, IV y V) por nombre o fecha..." >
 
     <div class="table-responsive">
       <table class="table table-bordered table-hover">
@@ -195,9 +201,9 @@
     <button onclick="eliminarTodo()" class="btn btn-danger">Eliminar todos los registros</button><br>
     <a href="http://127.0.0.1:8000/" class="btn-volver">Volver</a>
   </main>
-
+  
   <footer>
-    &copy; 2025 Patitas Felices. Todos los derechos reservados. <br>
+    &copy; 2025 veterinaria. Todos los derechos reservados. <br>
     📧 <a href="mailto:contacto@patitasfelices.com">contacto@patitasfelices.com</a> | ☎️ +591 123 456 789
   </footer>
 
@@ -251,6 +257,9 @@
         localStorage.setItem("citasPatitas", JSON.stringify(citas));
         cargarTabla();
         this.reset(); // Limpiar formulario
+      alert("✅ ¡Cita de emergencia agregada correctamente!");
+      } else {
+        alert("⚠️ Por favor, completa todos los campos.");
       }
     });
 
@@ -291,6 +300,7 @@
     document.getElementById("busqueda").addEventListener("input", (e) => {
       cargarTabla(e.target.value);
     });
+
 
     cargarTabla();
   </script>

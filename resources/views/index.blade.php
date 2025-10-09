@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
@@ -6,19 +6,20 @@
   <title>Patitas Felices</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet" />
+  
   <style>
     body {
       margin: 0;
       font-family: 'Nunito', sans-serif;
       color: #ffffff;
       background-image: url('{{ asset("imagenes/fondo.jpg") }}');
-     
     }
 
     /* Navbar */
     .navbar-custom {
       background-color: #000000;
-      padding: 1rem 2rem;
+      padding: 1rem 4rem;
     }
     .navbar-custom .navbar-brand {
       color: white;
@@ -32,6 +33,17 @@
       transition: color 0.3s;
     }
     .navbar-custom .nav-link:hover {
+      color: #6cc7c5;
+    }
+
+    /* Icono login */
+    .login-icon {
+      color: white;
+      font-size: 1.4rem;
+      margin-left: 1rem;
+      transition: color 0.3s;
+    }
+    .login-icon:hover {
       color: #6cc7c5;
     }
 
@@ -115,17 +127,24 @@
   <nav class="navbar navbar-expand-lg navbar-custom">
     <div class="container">
       <a class="navbar-brand" href="{{ url('/') }}">Patitas Felices</a>
+            <a href="{{ url('/login') }}" class="login-icon" title="Iniciar sesión">
+              <i class="bi bi-person-circle"></i>
       <button class="navbar-toggler btn btn-outline-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarPatitas">
         ☰
       </button>
       <div class="collapse navbar-collapse" id="navbarPatitas">
-        <ul class="navbar-nav ms-auto">
+        <ul class="navbar-nav ms-auto align-items-center">
           <li class="nav-item"><a class="nav-link" href="{{ url('/') }}">Inicio</a></li>
           <li class="nav-item"><a class="nav-link" href="{{ url('/especialidades') }}">Servicios</a></li>
           <li class="nav-item"><a class="nav-link" href="{{ url('/equipomedico') }}">Nuestro Equipo</a></li>
           <li class="nav-item"><a class="nav-link" href="{{ url('/agenda') }}">Agendar Cita</a></li>
           <li class="nav-item"><a class="nav-link" href="{{ url('/contacto') }}">Contáctanos</a></li>
-          <li class="nav-item"><a class="nav-link" href="{{ url('/inicio') }}">Informacion</a></li>
+          <li class="nav-item"><a class="nav-link" href="{{ url('/inicio') }}">Información</a></li>
+          <li class="nav-item"><a class="nav-link" href="{{ url('/calendario') }}">Calendario</a></li>
+          <li class="nav-item">
+
+            </a>
+          </li>
         </ul>
       </div>
     </div>
@@ -137,18 +156,15 @@
       <img src="{{ asset('imagenes/fondo.jpg') }}" alt="Perro y gato" width="300">
       <h1>Bienvenido a Patitas Felices</h1>
       <p>Cuidamos a tus mascotas con amor y profesionalismo</p>
-      <a href="{{ url('/verificacion') }}" class="btn btn-primary me-2">Citas Agendadas</a>
+      <a href="{{ url('/verificacion') }}" class="btn btn-primary me-2">Emergencia</a>
       <a href="{{ url('/listadocontacto') }}" class="btn btn-outline-light">Buscar contacto</a>
     </div>
-    
   </section>
 
   <!-- Footer -->
   <footer>
     &copy; 2025 Patitas Felices. Todos los derechos reservados.
   </footer>
-</section>
-</style>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>

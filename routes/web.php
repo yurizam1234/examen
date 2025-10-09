@@ -42,5 +42,13 @@ Route::get('/verificacion', function () {
 Route::get('/listadocontacto', function () {
     return view('listadocontacto');
 });
+Route::get('/calendario', function () {
+    return view('calendario');
+
+});
+Route::get('/login', function () {
+    return view('login');
+
+});
 
 

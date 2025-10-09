@@ -187,7 +187,7 @@
 
 
   <footer>
-    &copy; 2025 Patitas Felices. Todos los derechos reservados. <br>
+    &copy; 2025 veterinaria Patitas Felices 🐾. Todos los derechos reservados. <br>
     📧 <a href="mailto:contacto@patitasfelices.com">contacto@patitasfelices.com</a> | ☎️ +591 123 456 789
   </footer>
 

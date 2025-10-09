@@ -97,7 +97,7 @@
             <p>+591 67408813</p>
 
             <h5>📧 Correo electrónico</h5>
-            <p>patitasfelices.salud@gmail.com</p>
+            <p>veterinaria.salud@patitasfelices.com</p>
 
             <h5>🕒 Horarios</h5>
             <p>Lunes a Viernes: 8:00 AM – 7:00 PM<br>Sábados y Domingos: Cerrado</p>
@@ -114,7 +114,7 @@
 
               <div class="mb-3">
                 <label for="email" class="form-label">Correo electrónico</label>
-                <input type="email" class="form-control" id="email" placeholder="tu@email.com" required>
+                <input type="email" class="form-control" id="email" placeholder="Correo..@gmail.com" required>
               </div>
 
               <div class="mb-3">
@@ -135,8 +135,8 @@
   </main>
 
   <footer>
-    &copy; 2025 TECBA. Todos los derechos reservados. <br>
-    📧 <a href="mailto:contacto@tecba.com">contacto@tecba.com</a> | ☎️ +591 123 456 789
+    &copy; 2025 veterinaria Patitas Felices 🐾. Todos los derechos reservados. <br>
+    📧 <a href="mailto:contacto@patitasfelices.com">contacto@tecba.com</a> | ☎️ +591 123 456 789
   </footer>
 
   <script>
